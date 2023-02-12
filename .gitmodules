@@ -1,0 +1,6 @@
+[submodule "server/unified-io-inference"]
+	path = server/unified-io-inference
+	url = git@github.com:allenai/unified-io-inference.git
+[submodule "server/whisper"]
+	path = server/whisper
+	url = git@github.com:openai/whisper.git

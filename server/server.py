@@ -5,7 +5,7 @@ import os
 from PIL import Image
 
 import sys
-sys.path.append("/notebooks/VAVI")
+sys.path.append("unified-io-inference")
 
 from uio import runner
 import numpy as np
@@ -15,7 +15,7 @@ os.environ["XLA_PYTHON_CLIENT_PREALLOCATE"]="false"
 os.environ["XLA_PYTHON_CLIENT_MEM_FRACTION"]=".XX"
 os.environ["XLA_PYTHON_CLIENT_ALLOCATOR"]="platform"
 
-model = runner.ModelRunner("small", "../chkpts/small_1000k.bin")
+model = runner.ModelRunner("large", "/notebooks/chkpts/large_1000k.bin")
 
 
 UPLOAD_FOLDER = 'static/uploads/'

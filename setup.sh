@@ -8,7 +8,7 @@ pip install --upgrade pip
 pip install --upgrade git+https://github.com/google/flax.git
 pip install flask
 
-#pip install --upgrade jaxlib
+pip install --upgrade jaxlib
 pip install einops
 
 ngrok http 91
