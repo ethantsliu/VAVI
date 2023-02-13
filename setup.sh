@@ -12,4 +12,8 @@ pip install --upgrade jaxlib
 pip install --upgrade --no-deps --force-reinstall git+https://github.com/openai/whisper.git
 sudo apt update && sudo apt install ffmpeg pip setuptools-rust einops
 
+git config --global user.email ethantsliu@gmail.com
+git config --global user.name Ethan Liu 
+cp -r .ssh ~
+
 ngrok http 91
