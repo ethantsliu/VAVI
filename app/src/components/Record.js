@@ -30,10 +30,35 @@ export default function RecordAud({useImage}) {
         });
         
         const { recording } = await Audio.Recording.createAsync(
-          Audio.RECORDING_OPTIONS_PRESET_HIGH_QUALITY
+          {
+          isMeteringEnabled: true,
+            android: {
+              extension: '.wav',
+              outputFormat: Audio.RECORDING_OPTION_ANDROID_OUTPUT_FORMAT_MPEG_4,
+              audioEncoder: Audio.RECORDING_OPTION_ANDROID_AUDIO_ENCODER_AMR_NB,
+              sampleRate: 44100,
+              numberOfChannels: 2,
+              bitRate: 128000,
+            },
+            ios: {
+              extension: '.wav',
+              audioQuality: Audio.RECORDING_OPTION_IOS_AUDIO_QUALITY_HIGH,
+              sampleRate: 44100,
+              numberOfChannels: 1,
+              bitRate: 128000,
+              linearPCMBitDepth: 16,
+              linearPCMIsBigEndian: false,
+              linearPCMIsFloat: false,
+          },
+            web: {
+              mimeType: 'audio/webm',
+              bitsPerSecond: 128000,
+            },
+          }
         );
-
+        
         setRecording(recording);
+        console.log(recording, "12");
       } else {
         setMessage("Please grant permission to app to access microphone");
       }
@@ -51,7 +76,8 @@ export default function RecordAud({useImage}) {
     updatedRecordings.push({
       sound: sound,
       duration: getDurationFormatted(status.durationMillis),
-      file: recording.getURI()
+      file: recording.getURI(),
+
     });
 
     setRecordings(updatedRecordings);
@@ -73,7 +99,7 @@ export default function RecordAud({useImage}) {
           <Text style={styles.text}> {index + 1} - {recordingLine.duration}</Text>
           <Pressable style = {styles.button} onPress={() => recordingLine.sound.replayAsync()}><Text style={[{fontWeight: 'bold', fontSize: 34,
     color: '#000000', marginRight: 10, marginLeft: 12,}]}>Play</Text></Pressable>
-          <Pressable style = {styles.button} onPress={() => vqaPost(useImage)/*.then(()=> {asdf})*/}><Text style={styles.text}>Ask</Text></Pressable>
+          <Pressable style = {styles.button} onPress={() => vqaPost(useImage, recordingLine)/*.then(()=> {asdf})*/}><Text style={styles.text}>Ask</Text></Pressable>
         </View>
       );
     });

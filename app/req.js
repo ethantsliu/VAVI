@@ -3,7 +3,7 @@ import FormData from 'form-data';
 import smilingface from './smilingface.png'
 import { Image } from "react-native";
 
-apiroot = "https://55f7-172-83-13-4.ngrok.io"
+apiroot = "https://4ac8-172-83-13-4.ngrok.io"
 headers= {
     //'Accept': 'application/json',
     'Content-Type': "multipart/form-data",
@@ -41,14 +41,15 @@ async function sendPost(endpoint, body) {
     }
     
     
-export function vqaPost (photo){
+export function vqaPost (photo, audio){
+        console.log(audio, "34"),
         sendPost(`${apiroot}/vqa`, 
             
-            createFormData(photo),
+            createFormData(photo, audio),
       )
 }
 
-const createFormData = (photo, body = {question: "What color is this?"}) => {
+const createFormData = (photo, audio, body = {}) => {
     // const body = new FormData()  
     //   body.append('file', file)  
     //   body.append('question', "Caption this image")
@@ -61,12 +62,17 @@ const createFormData = (photo, body = {question: "What color is this?"}) => {
     const data = new FormData();
     // console.log(data._boundary, "45")
 
-    data.append('file', {
+    data.append('photo', {
         name: photo.uri.substring(photo.uri.lastIndexOf('/')+1),
         // name: "smilingface.png",
         type: "image/jpeg",
         uri: Platform.OS === 'ios' ? photo.uri.replace('file://', '') : photo.uri,
         // uri: Image.resolveAssetSource(smilingface).uri
+      }); 
+    data.append('audio', {
+        name: audio.file.substring(audio.file.lastIndexOf('/')+1),
+        type: "audio/x-caf",
+        uri: Platform.OS === 'ios' ? audio.file.replace('file://', '') : audio.file,
       }); 
   
     Object.keys(body).forEach((key) => {
