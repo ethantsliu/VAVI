@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native'; import { Text, V
 import * as MediaLibrary from 'expo-media-library'; import { MaterialIcons } from '@expo/vector-icons';import Button from './src/components/Camera';
 import Cam from './src/components/Camera'; import RecordAud from './src/components/Record'; import Ionicons from '@expo/vector-icons/Ionicons'; 
 import { vqaPost } from './req';
+//import resp
 
 const Tab = createBottomTabNavigator(); 
 export default function App() {
@@ -66,8 +67,26 @@ const styles = StyleSheet.create({
   },
 });
 
+/* <Popup resp = {resp}/> */
+/*export function Popup({resp}) {
+  const [isModalVisible, setisModalVisible] = useState(false);
 
+  const toggleModal = () => {
+    setisModalVisible(!isModalVisible);
+  };
 
+  return (
+    <View style={{ flex: 0 }}>
+      <Modal isVisible={isModalVisible}>
+        <View style={{ flex: 1 }}>
+          <Text>{resp}</Text>
+          <TouchableOpacity title="Cancel" onPress={toggleModal} style={styles.button}/>
+        </View>
+      </Modal>
+    </View>
+  );
+}
+*/
 
 
 

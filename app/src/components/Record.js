@@ -8,7 +8,7 @@ import { Camera, CameraType } from 'expo-camera';
 import * as MediaLibrary from 'expo-media-library';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { ScrollView, Button, TouchableOpacity, StyleSheet, Text, View, Pressable } from 'react-native';
+import { ScrollView, Button, TouchableOpacity, StyleSheet, Text, View, Pressable, Touchable } from 'react-native';
 import { Audio } from 'expo-av';
 import * as Sharing from 'expo-sharing';
 import { color } from 'react-native-reanimated';
@@ -18,7 +18,7 @@ export default function RecordAud({useImage}) {
   const [recording, setRecording] = React.useState();
   const [recordings, setRecordings] = React.useState([]);
   const [message, setMessage] = React.useState("");
-
+  const [answers, setAnswers] = React.useState([]);
   async function startRecording() {
     try {
       const permission = await Audio.requestPermissionsAsync();
@@ -58,8 +58,6 @@ export default function RecordAud({useImage}) {
         );
         
         setRecording(recording);
-        console.log(recording, "12");
-      } else {
         setMessage("Please grant permission to app to access microphone");
       }
     } catch (err) {
@@ -70,7 +68,6 @@ export default function RecordAud({useImage}) {
   async function stopRecording() {
     setRecording(undefined);
     await recording.stopAndUnloadAsync();
-
     let updatedRecordings = [...recordings];
     const { sound, status } = await recording.createNewLoadedSoundAsync();
     updatedRecordings.push({
@@ -81,6 +78,8 @@ export default function RecordAud({useImage}) {
     });
 
     setRecordings(updatedRecordings);
+    setAnswers([...answers, null])
+    console.log(answers)
   }
 
   function getDurationFormatted(millis) {
@@ -91,16 +90,26 @@ export default function RecordAud({useImage}) {
     return `${minutesDisplay}:${secondsDisplay}`;
   }
 
-
+  function updateAnswers({text}, index){ 
+      let answerscopy = [...answers]
+      answerscopy[index] = text
+      setAnswers(answerscopy)
+      //voice this out + implement voice assistant(text)
+  }
   function getRecordingLines() {
     return recordings.map((recordingLine, index) => {
       return (
+        <>
         <View key={index} style={styles.row}>
           <Text style={styles.text}> {index + 1} - {recordingLine.duration}</Text>
-          <Pressable style = {styles.button} onPress={() => recordingLine.sound.replayAsync()}><Text style={[{fontWeight: 'bold', fontSize: 34,
-    color: '#000000', marginRight: 10, marginLeft: 12,}]}>Play</Text></Pressable>
-          <Pressable style = {styles.button} onPress={() => vqaPost(useImage, recordingLine)/*.then(()=> {asdf})*/}><Text style={styles.text}>Ask</Text></Pressable>
+          <TouchableOpacity style = {styles.button} onPress={() => recordingLine.sound.replayAsync()}><Text style={[{fontWeight: 'bold', fontSize: 34,
+    color: '#000000', marginRight: 10, marginLeft: 12,}]}>Play</Text></TouchableOpacity>
+          <TouchableOpacity style = {styles.button} onPress={() => vqaPost(useImage, recordingLine).then((data)=> {updateAnswers(data, index)})}><Text style={styles.text}>Ask</Text></TouchableOpacity>
         </View>
+        <View style={styles.row}>
+        {answers[index] ? <Text style={styles.text}> {index+1} - {answers[index]}</Text> : <></>}
+        </View>
+        </>
       );
     });
   } 
@@ -108,7 +117,6 @@ export default function RecordAud({useImage}) {
   return (
     <ScrollView>
     <View style={styles.text}>
-      <Text style={styles.text}>{message}</Text>
       <Button style={styles.button} color={"#000000"}
         
         title={recording ? 'Stop Recording' : 'Start Recording'}

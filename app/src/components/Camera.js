@@ -91,7 +91,6 @@ function Cam({setuseImage}) {
     if (cameraRef) {
       try {
         const data = await cameraRef.current.takePictureAsync();
-        console.log(data);
         setImage(data.uri);
         setfullImage(data);
       } catch (error) {
