@@ -84,7 +84,7 @@ function Cam({setuseImage}) {
 
   const usePicture = async () => {
     setuseImage(fullImage);
-    navigation.navigate('Prompt');
+    navigation.navigate('RecordAudio');
   }
 
   const takePicture = async () => {
@@ -130,10 +130,11 @@ function Cam({setuseImage}) {
               flexDirection: 'row',
               justifyContent: 'space-between',
               paddingHorizontal: 10,
+              
             }}
           >
-            <Button
-              title=""
+            <Button accessible= {true} accessibilityLabel= "Flip Camera" accessibilityHint= "Flip a camera here"
+              title="Flip Camera"
               icon="retweet"
               onPress={() => {
                 setType(
@@ -142,6 +143,7 @@ function Cam({setuseImage}) {
               }}
             />
             <Button 
+            title="Flash"
               onPress={() =>
                 setFlash(
                   flash === Camera.Constants.FlashMode.off
@@ -172,18 +174,22 @@ function Cam({setuseImage}) {
               title="Take"
               onPress={() => setImage(null)}
               icon="retweet"
+              accessible={true} accessibilityLabel="Re-take" accessibilityHint="Retake a picture"
             />
-            <Button title="Save" onPress={savePicture} icon="check" />
-            
             <Button 
               title = "Use"
               onPress={usePicture}
               icon="forward"
+              accessible={true} accessibilityLabel="Use" accessibilityHint="Takes you to the question screen."
             />
+            <Button title="Save" onPress={savePicture} icon="check" accessible={true} 
+              accessibilityLabel="Save" accessibilityHint="Save a picture to your gallery"/>
+            
           </View>
         ) : (
           [
-            <Button title="Take a picture" onPress={takePicture} icon="camera" key="qwerty"/>,
+            <Button title="Take a picture" onPress={takePicture} icon="camera" key="qwerty" 
+            accessible={true} accessibilityLabel="Take a picture"/>,
           ]
         )}
       </View>

@@ -24,8 +24,8 @@ export default function App() {
             fontSize: 26,
           },
           }}>
-        <Tab.Screen name="TakePic" children = {()=>cam}/>
-        <Tab.Screen name="Prompt" children = {()=> recordaud}/>
+        <Tab.Screen name="Camera" children = {()=>cam} accessible={true} accessibilityLabel="Camera" accessibilityHint="Navigate here to take a picture"/>
+        <Tab.Screen name="RecordAudio" children = {()=> recordaud} accessible={true} accessibilityLabel="Recorder" accessibilityHint="Navigate here to ask a question"/>
       </Tab.Navigator>
     </NavigationContainer>
     </View>
