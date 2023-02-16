@@ -3,7 +3,7 @@ import FormData from 'form-data';
 import smilingface from './smilingface.png'
 import { Image } from "react-native";
 
-apiroot = "https://7f3c-172-83-13-4.ngrok.io"
+apiroot = "https://84f0-172-83-13-4.ngrok.io"
 headers= {
     //'Accept': 'application/json',
     'Content-Type': "multipart/form-data",
@@ -21,7 +21,7 @@ async function sendPost(endpoint, body) {
     
     
 export function vqaPost (photo, audio){
-        return sendPost(`${apiroot}/vqa`, 
+        return sendPost(`${apiroot}/vavi`, 
             createFormData(photo, audio),
       )
 }

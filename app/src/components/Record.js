@@ -13,6 +13,7 @@ import { Audio } from 'expo-av';
 import * as Sharing from 'expo-sharing';
 import { color } from 'react-native-reanimated';
 import { vqaPost, axois } from '../../req';
+import Tts from 'react-native-tts'
 
 export default function RecordAud({useImage}) {
   const [recording, setRecording] = React.useState();
@@ -94,6 +95,7 @@ export default function RecordAud({useImage}) {
       let answerscopy = [...answers]
       answerscopy[index] = text
       setAnswers(answerscopy)
+      Tts.speak(answerscopy)
       //voice this out + implement voice assistant(text)
   }
   function getRecordingLines() {
