@@ -1,6 +1,6 @@
 # VAVI: A Virtual Assistant for the Visually Impaired
 
-_Disclaimer: All code within VAVI is written by me, except for the submodules or code snippets implemented in server.py with BLIP. Record.js and Camera.js were written by me with the help of React-Native Documentation and Expo Development Documentation. _
+_Disclaimer: All code within VAVI is written by me, except for the submodules or code snippets implemented in server.py with BLIP. Record.js and Camera.js were written by me with the help of React-Native Documentation and Expo Development Documentation._
 
 **Directions: Download, extract, and run.**
 
