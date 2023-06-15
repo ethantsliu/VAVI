@@ -10,7 +10,7 @@ Therefore, we present VAVI, a Virtual Assistant for the Visually Impaired. VAVI 
 
 VAVI replaces the usual need for a human assistant to answer questions about the environment, and attempts to match or exceed the capabilities of a human assistant. We borrow the SMMC method, a modular framework in which a language-based exchange is facilitated between pretrained models without training or fine-tuning [9]. Through SMMC, we are able to champion the few-shot capabilities of these pre-trained models via prompt engineering and multi-model dialogue to execute joint inference on downstream vision-language tasks, tailored to aiding the visually impaired. 
 
-##References
+## References
 1. “Vision Atlas,” The International Agency for the Prevention of Blindness. https://www.iapb.org/learn/vision-atlas/ (accessed Feb. 01, 2023).
 2. V. R. Cimarolli and K. Boerner, “Social Support and Well-being in Adults who are Visually Impaired,” Journal of Visual Impairment & Blindness, vol. 99, no. 9, pp. 521–534, Sep. 2005, doi: 10.1177/0145482X0509900904.
 3. S. K. West, B. Munoz, G. S. Rubin, K. Bandeen-Roche, and S. Zeger, “Function and Visual Impairment in a Population-Based Study of Older Adults,” Investigative Ophthalmology, vol. 38, no. 1, 1997.
