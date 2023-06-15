@@ -11,14 +11,13 @@ Therefore, we present VAVI, a Virtual Assistant for the Visually Impaired. VAVI 
 VAVI replaces the usual need for a human assistant to answer questions about the environment, and attempts to match or exceed the capabilities of a human assistant. We borrow the SMMC method, a modular framework in which a language-based exchange is facilitated between pretrained models without training or fine-tuning [9]. Through SMMC, we are able to champion the few-shot capabilities of these pre-trained models via prompt engineering and multi-model dialogue to execute joint inference on downstream vision-language tasks, tailored to aiding the visually impaired. 
 
 ##References
-[1]. “Vision Atlas,” The International Agency for the Prevention of Blindness. https://www.iapb.org/learn/vision-atlas/ (accessed Feb. 01, 2023).
-[2] V. R. Cimarolli and K. Boerner, “Social Support and Well-being in Adults who are Visually Impaired,” Journal of Visual Impairment & Blindness, vol. 99, no. 9, pp. 521–534, Sep. 2005, doi: 10.1177/0145482X0509900904.
-[3] S. K. West, B. Munoz, G. S. Rubin, K. Bandeen-Roche, and S. Zeger, “Function and Visual Impairment in a Population-Based Study of Older Adults,” Investigative Ophthalmology, vol. 38, no. 1, 1997.
-[4] B. E. K. Klein, R. Klein, K. E. Lee, and K. J. Cruickshanks, “Performance-based and self-assessed measures of visual function as related to history of falls, hip fractures, and measured gait time: The beaver dam eye study,” Ophthalmology, vol. 105, no. 1, pp. 160–164, Jan. 1998, doi: 10.1016/S0161-6420(98)91911-X.
-[5] “Programs & Services,” Vista Center for the Blind and Visually Impaired. https://vistacenter.org/programs-services/ (accessed Feb. 01, 2023).
-[6] B. Kumar, “ViT Cane: Visual Assistant for the Visually Impaired.” arXiv, Sep. 25, 2021. doi: 10.48550/arXiv.2109.13857.
-​​[7] E. Marvin, “Digital Assistant for the Visually Impaired,” in 2020 International Conference on Artificial Intelligence in Information and Communication (ICAIIC), Feb. 2020, pp. 723–728. doi: 10.1109/ICAIIC48513.2020.9065191.
-[8] S. Treiman, “Visually Impaired by Dry or Wet AMD? Low-Vision Apps, Devices, and Virtual Assistants Can Expand Your View,” EverydayHealth.com, Dec. 13, 2022. https://www.everydayhealth.com/vision/low-vision-apps-devices-virtual-assistants-expand-the-view-for-the-visually-impaired/ (accessed Feb. 01, 2023).
-[9] E. Liu, “Simplifying Multimodal Composition: A Novel Zero-shot Framework to Visual Question Answering and Image Captioning,” Jun. 13, 2023. https://doi.org/10.21203/rs.3.rs-3027308/v1 (accessed Jun. 15, 2023).
-[9] A. Zeng et al., “Socratic Models: Composing Zero-Shot Multimodal Reasoning with Language.” arXiv, May 27, 2022. Accessed: Jan. 22, 2023. [Online]. Available: http://arxiv.org/abs/2204.00598
+1. “Vision Atlas,” The International Agency for the Prevention of Blindness. https://www.iapb.org/learn/vision-atlas/ (accessed Feb. 01, 2023).
+2. V. R. Cimarolli and K. Boerner, “Social Support and Well-being in Adults who are Visually Impaired,” Journal of Visual Impairment & Blindness, vol. 99, no. 9, pp. 521–534, Sep. 2005, doi: 10.1177/0145482X0509900904.
+3. S. K. West, B. Munoz, G. S. Rubin, K. Bandeen-Roche, and S. Zeger, “Function and Visual Impairment in a Population-Based Study of Older Adults,” Investigative Ophthalmology, vol. 38, no. 1, 1997.
+4. B. E. K. Klein, R. Klein, K. E. Lee, and K. J. Cruickshanks, “Performance-based and self-assessed measures of visual function as related to history of falls, hip fractures, and measured gait time: The beaver dam eye study,” Ophthalmology, vol. 105, no. 1, pp. 160–164, Jan. 1998, doi: 10.1016/S0161-6420(98)91911-X.
+5. “Programs & Services,” Vista Center for the Blind and Visually Impaired. https://vistacenter.org/programs-services/ (accessed Feb. 01, 2023).
+6. B. Kumar, “ViT Cane: Visual Assistant for the Visually Impaired.” arXiv, Sep. 25, 2021. doi: 10.48550/arXiv.2109.13857.
+7. E. Marvin, “Digital Assistant for the Visually Impaired,” in 2020 International Conference on Artificial Intelligence in Information and Communication (ICAIIC), Feb. 2020, pp. 723–728. doi: 10.1109/ICAIIC48513.2020.9065191.
+8. S. Treiman, “Visually Impaired by Dry or Wet AMD? Low-Vision Apps, Devices, and Virtual Assistants Can Expand Your View,” EverydayHealth.com, Dec. 13, 2022. https://www.everydayhealth.com/vision/low-vision-apps-devices-virtual-assistants-expand-the-view-for-the-visually-impaired/ (accessed Feb. 01, 2023).
+9. E. Liu, “Simplifying Multimodal Composition: A Novel Zero-shot Framework to Visual Question Answering and Image Captioning,” Jun. 13, 2023. https://doi.org/10.21203/rs.3.rs-3027308/v1 (accessed Jun. 15, 2023).
 
