@@ -5,7 +5,7 @@ import requests
 import torch
 from torchvision import transforms
 from torchvision.transforms.functional import InterpolationMode
-openai.api_key = "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"
+openai.api_key = "[redacted]"
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 import json
 import random 
